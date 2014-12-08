@@ -12,6 +12,7 @@ Tumblful::Application.routes.draw do
 
   resources :image_links
   resources :text_posts
+  resources :likes
 
   # You can have the root of your site routed with "root"
   root :to => 'home#index'
