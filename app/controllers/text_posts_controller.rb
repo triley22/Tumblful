@@ -1,6 +1,6 @@
 class TextPostsController < ApplicationController
   def index
-    @text_post = TextPost.all
+    @text_posts = TextPost.all
   end
 
   def show

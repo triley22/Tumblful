@@ -1,2 +1,15 @@
-<h1>TextPosts#index</h1>
-<p>Find me in app/views/text_posts/index.html.erb</p>
+<% @text_posts.each do |text_post| %>
+  <h2><%= text_post.title %></h2>
+  <%= simple_format text_post.body %>
+
+  <span class='likes pull-left'>
+    <%= text_post.likes.count %> likes 
+  </span>
+
+  <%= form_for Like.new do |f| %>
+    <%= f.hidden_field :likeable_type, :value => text_post.class %>
+    <%= f.hidden_field :likeable_id, :value => text_post.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.submit "Like" %>
+  <% end %>
+<% end %>
