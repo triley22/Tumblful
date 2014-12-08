@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208125348) do
+ActiveRecord::Schema.define(version: 20141208125643) do
 
   create_table "article_links", force: true do |t|
     t.string   "title"
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "follows", force: true do |t|
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20141208125348) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "text_posts", force: true do |t|
@@ -41,6 +43,7 @@ ActiveRecord::Schema.define(version: 20141208125348) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "tweets", force: true do |t|
