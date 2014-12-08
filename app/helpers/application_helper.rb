@@ -75,8 +75,7 @@ module ApplicationHelper
   # Returns HTML for the internal content of a notice of a specific type. Used by #notices.
   #
   def notice_text(type)
-    html = content_tag :button, "Dismiss Alert", :class => 'close', 'data-dismiss' => 'alert', 'aria-hidden' => true
-    html += content_tag :strong, flash[type]
+    html = content_tag :strong, flash[type]
     html.html_safe
   end
 end

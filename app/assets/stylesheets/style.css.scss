@@ -21,7 +21,7 @@ body {
   padding-right: 0px;
   padding-top: 0px;
   unicode-bidi: embed;
-  width: 1280px;
+  width: 100%;
 }
 
 nav {
@@ -33,6 +33,10 @@ nav {
 .nav-logo-link {
   height: 12px;
   padding: 10px 14px 18px;
+}
+
+.main-content {
+  margin: 5px;
 }
 
 a.page-title,
@@ -158,8 +162,9 @@ a.page-title:visited {
   top: 0;
   z-index: 1050;
   color: white;
-  width: 100%;
+  width: 50%;
   text-align: center;
+  left: 25%;
 }
 
 .alert-float .alert {
