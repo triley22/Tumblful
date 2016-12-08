@@ -1,0 +1,13 @@
+<div>
+  <% @text_post.each do |text_post| %>
+    <%= div_for textpost do %>
+      ..............
+      ..............
+      <p>
+        <%= link_to "Show", text_post_path(text_post) %> |
+      </p>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "Back", text_posts_path %>

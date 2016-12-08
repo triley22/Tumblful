@@ -9,7 +9,10 @@ class ApplicationController < ActionController::Base
 
   # See section on Strong Parameters: https://github.com/plataformatec/devise
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:sign_up) << :username
+    added_attrs = [:name, :username]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
   end
 end
+
+
+
