@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :follows
+  has_many :image_links #link users to ImageLinks
 
   has_many :article_links
   has_many :image_links
