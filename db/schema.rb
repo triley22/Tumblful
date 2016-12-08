@@ -11,11 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 20161202165755) do
-=======
-ActiveRecord::Schema.define(version: 20161019004532) do
->>>>>>> 58946611dd7eeaddbd59de2ca5764aecf02106d3
 
   create_table "article_links", force: true do |t|
     t.string   "title"
