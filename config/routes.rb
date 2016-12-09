@@ -4,6 +4,7 @@ Tumblful::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :image_links
   resources :text_posts
+  resources :likes, :only => [:create]
 
   authenticated :user do
     resources :follows, :except => [:new, :edit, :show, :update]

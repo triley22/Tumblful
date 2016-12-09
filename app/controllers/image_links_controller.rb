@@ -1,5 +1,4 @@
 class ImageLinksController < ApplicationController
-
 def index
 	@image_link = ImageLink.all 
 end
@@ -9,7 +8,7 @@ def show
 end
 
 def new
-	@image_link = ImageLink.new
+  @image_link = ImageLink.new
 end
 
 def edit

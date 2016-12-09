@@ -1,14 +1,14 @@
 class TextPostsController < ApplicationController
 def index
 	@text_post = TextPost.all 
-	end
+end
 
 def show
 	@text_post = TextPost.find(params[:id])
 end
 
 def new
-
+  @text_post = TextPost.new
 end
 
 def edit
@@ -16,13 +16,13 @@ def edit
 end
 
 def create
-	@text_post = TextPost.new(text_post_params[:url], text_post_params)
-if @text_post.save
-  redirect_to text_posts_path
-else
-  @errors = @text_post.errors
-  render :new
-	end
+	@text_post = TextPost.new(string: params[:text_post][:title], string: params[:text_post][:string])
+    if @text_post.save
+    redirect_to text_posts_path
+    else
+    @errors = @text_post.errors
+    render :new
+    end
 end
 
 def update

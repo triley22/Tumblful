@@ -1,13 +1,29 @@
-<div>
+<!-- <div>
   <% @text_post.each do |text_post| %>
-    <%= div_for textpost do %>
-      ..............
-      ..............
+    <%= div_for text_post do %>
       <p>
-        <%= link_to "Show", text_post_path(text_post) %> |
+        <%= link_to "Show", text_post_path(text_post) %>
       </p>
     <% end %>
   <% end %>
 </div>
 
-<%= link_to "Back", text_posts_path %>
+<%= link_to "Back", text_posts_path %> -->
+
+<% @text_post.each do |text_post| %>
+  <h2><%= text_post.title %></h2>
+ 
+<%= image_tag text_post.title %>
+
+  <span class='likes pull-left'>
+  <%= text_post.likes.count %> likes
+  </span>
+
+  <%= form_for Like.new do |f| %>
+    <%= f.hidden_field :likeable_type, :value => text_post.class %>
+    <%= f.hidden_field :likeable_id, :value => text_post.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.submit "Like" %>
+  <% end %>
+
+  <% end %>
