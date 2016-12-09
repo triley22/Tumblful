@@ -16,7 +16,7 @@ def edit
 end
 
 def create
-	@text_post = TextPost.new(string: params[:text_post][:title], string: params[:text_post][:string])
+	@text_post = TextPost.new(title: params[:text_post][:title], url: params[:text_post][:url])
     if @text_post.save
     redirect_to text_posts_path
     else
@@ -44,5 +44,5 @@ end
 
 private
   def text_post_params
-    params.require(:text_post).permit(:url, :title)
+    params.require(:text_post).permit(:title, :url)
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209201233) do
+ActiveRecord::Schema.define(version: 20161209230110) do
 
   create_table "article_links", force: true do |t|
     t.string   "title"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20161209201233) do
 
   create_table "text_posts", force: true do |t|
     t.string   "title"
-    t.string   "string"
+    t.string   "url"
     t.string   "description"
     t.string   "text"
     t.datetime "created_at"
